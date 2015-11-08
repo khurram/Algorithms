@@ -18,12 +18,12 @@ public class LinkedList {
 
     public boolean deleteElement(ListElement<Integer> head, ListElement<Integer> deleteMe) {
         ListElement<Integer> elem = head;
-        
+
         if (head == deleteMe) {
             head = elem.next();
             return true;
         }
-        
+
         while (elem != null) {
             if (elem.next() == deleteMe) {
                 elem.setNext(deleteMe.next());
@@ -33,7 +33,7 @@ public class LinkedList {
         }
         return false;
     }
-    
+
     public void deleteList(ListElement<Integer> head) {
         ListElement<Integer> elem = head;
         while (elem != null) {
@@ -43,7 +43,4 @@ public class LinkedList {
         }
         head = null;
     }
-    
-    
-
 }
