@@ -56,5 +56,5 @@ public class StackA {
         } else {
             return false;
         }
-    }g
+    }
 }
