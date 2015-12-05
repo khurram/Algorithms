@@ -1,47 +1,58 @@
 package me.aslam.khurram.datastructures;
 
-import me.aslam.khurram.linkedlist.ListElement;
+import me.aslam.khurram.datastructures.ListNode;
 
-public class Stack {
+/**
+ * Generic implementation of a Stack backed by a linked list. As with the LinkedList, the operations
+ * in this class are static utility functions not methods to be used on the Stack object.
+ *
+ * @param <T> type of the stack
+ */
+public class Stack<T> {
 
-    private ListElement<Integer> stack;
+    private ListNode<T> stack;
 
-    public Stack() {
-        this.stack = createStack();
-    }
-
-    public Stack(ListElement<Integer> stack) {
-        this.stack = stack;
-    }
-
-    public ListElement<Integer> createStack() {
-        ListElement<Integer> stack = new ListElement<>();
+    /**
+     * Constructor to create a new stack using a LinkedList
+     *
+     * @return an empty ListNode representing the stack
+     */
+    public ListNode<T> Stack() {
+        stack = new ListNode<>();
         return stack;
     }
 
-    public void deleteStack(ListElement<Integer> stack) {
-        ListElement<Integer> elem = stack;
-        while (elem != null) {
-            ListElement<Integer> nextElement = elem.next();
-            elem.setNext(null);
-            elem = nextElement;
-        }
-        stack = null;
+    /**
+     * Push data on the to the top of the stack in O(1) time
+     *
+     * @param stack head of the stack
+     * @param data  data to push onto stack
+     * @return new head of the linked list
+     */
+    public static <T> ListNode<T> push(ListNode<T> stack, T data) {
+        ListNode<T> node = new ListNode<>(data);
+        node.setNext(stack);
+        return node;
     }
 
-    public ListElement<Integer> push(ListElement<Integer> stack, int data) {
-        ListElement<Integer> elem = new ListElement<>(data);
-        elem.setNext(stack);
-        return elem;
-    }
-
-    public ListElement<Integer> pop(ListElement<Integer> stack) {
-        ListElement<Integer> head = stack;
+    /**
+     * Pops data off the top of the stack in O(1) time
+     *
+     * @param stack head of the stack
+     * @return new head of the linked list
+     */
+    public static <T> ListNode<T> pop(ListNode<T> stack) {
+        ListNode<T> head = stack;
         stack = stack.next();
         return head;
     }
 
-    boolean isEmpty() {
+    /**
+     * Checks if the stack is empty in O(1) time
+     *
+     * @return true if the stack is empty, false otherwise
+     */
+    public static <T> boolean isEmpty(ListNode<T> stack) {
         if (stack == null) {
             return true;
         }
