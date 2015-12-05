@@ -1,7 +1,7 @@
 Algorithms
 ==========
 
-This project contains basic implementations of various search, search sort, and other algorithms found in the Informatics 2B course (http://www.inf.ed.ac.uk/teaching/courses/inf2b) and/or Introduction to Algorithms (CLRS).
+This project contains basic implementations of various search, search sort, and other algorithms found in the Introduction to Algorithms (CLRS) textbook.
 
 In addition I may include various data structure implementations or implementations of some more advanced algorithms.
 
