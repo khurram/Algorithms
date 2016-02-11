@@ -1,11 +1,12 @@
 package me.aslam.khurram.datastructures;
 
 /**
- * Implementation of a stack backed by an int array
+ * Implementation of a stack backed by a generically typed array
+ * @param <T> type of the stack
  */
-public class StackA {
+public class StackA<T> implements IStack<T> {
 
-    private int[] stack;
+    private T[] stack;
     private int top;
 
     /**
@@ -13,10 +14,9 @@ public class StackA {
      * @param size length of the stack
      * @return new stack of given length
      */
-    public int[] StackA(int size) {
-        stack = new int[size];
+    public StackA() {
+        stack = (T[]) new Object[10];
         top = -1;
-        return stack;
     }
 
     /**
@@ -24,7 +24,7 @@ public class StackA {
      * @param data int to put on the top of the stack
      * @throws Exception
      */
-    public void push(int data) throws Exception {
+    public void push(T data) throws Exception {
         if (top == stack.length) {
             throw new Exception("Stack is full");
         }
@@ -37,7 +37,7 @@ public class StackA {
      * @return int from the top of the stack
      * @throws Exception
      */
-    public int pop() throws Exception {
+    public T pop() throws Exception {
         if (isEmpty()) {
             throw new Exception("Stack is empty");
         } else {

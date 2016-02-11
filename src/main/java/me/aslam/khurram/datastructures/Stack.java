@@ -1,6 +1,5 @@
 package me.aslam.khurram.datastructures;
 
-import me.aslam.khurram.datastructures.ListNode;
 
 /**
  * Generic implementation of a Stack backed by a linked list. As with the LinkedList, the operations
